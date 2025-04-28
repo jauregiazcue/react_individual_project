@@ -6,10 +6,6 @@
   --footer-color: rgb(13, 13, 20);
 }
 
-.logo {
-  height: 6em;
-}
-
 #root {
   background-color: var(--main-color);
   width: 90%;

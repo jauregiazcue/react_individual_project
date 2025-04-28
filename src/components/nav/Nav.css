@@ -1,0 +1,52 @@
+:root{
+
+    --main-background-color: #eeeeee;
+    --main-color: #3a4d5f;
+
+    --second-color: white;
+    --footer-color: rgb(13, 13, 20);
+}
+.my-nav {
+    margin-top: 10px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--second-color);
+}
+
+.my-nav ul {
+    display: flex;
+    flex-flow: row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.my-nav ul li {
+    padding: 0 0.2em;
+}
+
+.my-nav a {
+    text-decoration: none;
+    color: var(--main-color);
+    padding-top: .5em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+
+.my-nav a:hover {
+    background-color: var(--main-color);
+    color: var(--main-background-color);
+    border-style: solid;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-width: 1px;
+    border-color: var(--main-color);
+    text-decoration: none;
+}

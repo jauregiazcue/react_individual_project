@@ -1,0 +1,23 @@
+:root {
+  --main-background-color: #eeeeee;
+  --main-color: #3a4d5f;
+
+  --second-color: white;
+  --footer-color: rgb(13, 13, 20);
+}
+
+.logo {
+  height: 6em;
+}
+
+#root {
+  background-color: var(--main-color);
+  width: 90%;
+  margin: auto auto;
+  height:100vh;
+}
+
+body {
+  background-color: var(--main-background-color);
+}
+

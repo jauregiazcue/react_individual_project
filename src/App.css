@@ -6,14 +6,48 @@
   --footer-color: rgb(13, 13, 20);
 }
 
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  overflow: auto;
+}
+
 #root {
   background-color: var(--main-color);
   width: 90%;
   margin: auto auto;
-  height:100vh;
+  border-top: 5px solid var(--main-color);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+  padding-top: 1%;
   background-color: var(--main-background-color);
+
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  #root {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  body {
+    padding-top: 0%;
+
+  }
+}

@@ -1,19 +1,19 @@
 import './Nav.css'
 
-function NavBar({ myItem }) {
+function NavBar({ myItem, onRouteChange }) {
     return (
-        <div className="my-nav">
+        <nav className="my-nav">
             <ul>
                 {myItem.map(item => (
                     <li
-                        key={item}
+                        key={item.text}
                     >
-                        <a>{item}</a>
+                        <a  onClick={()=>onRouteChange(item.newRoute)}>{item.text}</a>
                         
                     </li>
                 ))}
             </ul>
-        </div>
+        </nav>
     );
 }
 

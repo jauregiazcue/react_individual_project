@@ -11,20 +11,40 @@ import otherImage from './assets/other.jpg'
 import telephoneImage from './assets/telephones.jpg'
 
 import Header from "./components/header/Header.jsx"
-import LostAndFound from './components/lostAndFound/lostAndFound.jsx'
+import LostAndFound from './components/lostAndFound/LostAndFound.jsx'
+
+import LostList from "./components/lostList/LostList.jsx"
 
 import './App.css'
+import { useState } from 'react';
+
+const routes = {
+  home : <h1>Zarauzko Udala</h1>,
+  services : <h1>Trámites y Servicios</h1>,
+  city : <h1>Ciudad</h1>,
+  cityHall : <h1>Ayuntamiento</h1>,
+  turism : <h1>Turismo</h1>,
+  calendar : <h1>Agenda 2030</h1>,
+  lostAndFound : <LostAndFound myItem={[
+    { image: keyImage, text: "Llaves" }, { image: bicicleImage, text: "Bicicletas" },
+    { image: bagImage, text: "Bolsos/Carteras" }, { image: creditCardImage, text: "Documentacion\nTarjetas" },
+    { image: electronicsImage, text: "Electrónica" }, { image: joyasImage, text: "Joyas" },
+    { image: telephoneImage, text: "Telefonos" }, { image: clothesImage, text: "Ropa" },
+    { image: otherImage, text: "Otros" }]} />,
+  lostList : <LostList/>
+}
 
 function App() {
+  const [route, setRoute] = useState("home");
+
+  const handleRouteChange = (newRoute) => {
+    console.log("CHANGING ROUTES MATE");
+    setRoute(newRoute);
+  }
   return (
     <>
-      <Header/>
-      <LostAndFound myItem={[
-        {image:keyImage,text:"Llaves"},{image:bicicleImage,text:"Bicicletas"},
-        {image:bagImage,text:"Bolsos/Carteras"},{image:creditCardImage,text:"Documentacion/Tarjetas/Dinero"},
-        {image:electronicsImage,text:"Electrónica"},{image:joyasImage,text:"Joyas"},
-        {image:telephoneImage,text:"Telefonos"},{image:clothesImage,text:"Ropa"},
-        {image:otherImage,text:"Otros"}]}/>
+      <Header route={route} onRouteChange={handleRouteChange}/>
+      {routes[route]}
     </>
   )
 }

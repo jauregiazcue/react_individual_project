@@ -3,7 +3,7 @@ import {getAllLostObjects} from "../../api/object.js"
 
 import { useState, useEffect } from 'react';
 
-function LostList() {
+function LostList(category_id) {
     const [objects, setData] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ function LostList() {
     return (
         <section>
             {objects.map(object => {
-                return <LostCard key={object.first_name} object={object} />
+                return <LostCard key={object.object_id} object={object} />
             })}
 
         </section>

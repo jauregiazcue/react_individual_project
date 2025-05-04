@@ -6,7 +6,7 @@ function LostCard({ object }) {
             <div>
             <img src="https://placehold.co/600x400" className="logo" alt={"AUX"} />
             </div>
-            <div>{object.first_name}</div>
+            <div>{object.object_id}</div>
         </section>
     )
 }

@@ -1,6 +1,19 @@
-.lost-list {
+
+.lost-section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    height: 100%;
+}
+
+.lost-right-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 5%;
+    height: auto;
+}
+
+.lost-left-section {
+    border-right: 2px solid var(--second-color);
 }

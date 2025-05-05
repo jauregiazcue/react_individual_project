@@ -32,10 +32,12 @@ function App() {
 
   const handleRouteChange = (newRoute) => {
     setRoute(newRoute);
+
   }
   return (
     <>
       <RouteContext value={{ route: route, onRouteChange: handleRouteChange }}>
+        {login ? <AppUser/> : <Login/>}
         <Header route={route} />
         {route != "city" ? routes[route] :
           <>

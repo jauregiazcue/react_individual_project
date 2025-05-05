@@ -14,24 +14,22 @@ import joyasImage from '../../assets/joyas.jpg'
 import otherImage from '../../assets/other.jpg'
 import telephoneImage from '../../assets/telephones.jpg'
 
-import Button from '../button/Button.jsx'
-import { getAll } from '../../api/objectCat.js';
+import { NavLink } from 'react-router-dom';
 
-import RouteContext from '../../content/routeContext.jsx';
+import { getAll } from '../../api/objectCat.js';
 
 import './LostAndFound.css'
 
 
-const img =[
-     keyImage,  bicicleImage,
-     bagImage ,  creditCardImage ,
-     electronicsImage ,  joyasImage,
-     telephoneImage ,  clothesImage ,
-     otherImage];
+const img = [
+    keyImage, bicicleImage,
+    bagImage, creditCardImage,
+    electronicsImage, joyasImage,
+    telephoneImage, clothesImage,
+    otherImage];
 
 function LostAndFound() {
     const [objCat, setData] = useState([]);
-    const {route,onRouteChange} = useContext(RouteContext);
 
     useEffect(() => {
         handleFetchData();
@@ -40,17 +38,22 @@ function LostAndFound() {
     const handleFetchData = async () => {
         setData(await getAll());
     }
-    
+
+    console.log(objCat);
     return (
         <div className="my-section">
-            {objCat.map(item => (
-                <div key={item.name} >
-                    <Button myFunction={() => onRouteChange("lostList" + item.object_category_id)}>
-                        <img src={img[item.object_category_id - 1]} 
-                        className="logo" alt={"Alt: " + item.name} />
+            {objCat && objCat.map(object => (
+                <div key={object.object_category_id} >
+                    <NavLink className="my-navlink-section"
+                        to={"/es/ciudad/objetosPerdidos/" + object.object_category_id}
+                    >
+                        <img src={img[object.object_category_id - 1]}
+                            className="logo" alt={"Alt: " + object.name} />
+                        <p>{object.name}</p>
+                    </NavLink>
+                    
 
-                    </Button>
-                    <p>{item.name}</p>
+
                 </div>
             ))}
 

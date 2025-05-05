@@ -1,6 +1,9 @@
-import './Nav.css'
+import { useContext } from 'react';
+import RouteContext from '../../content/routeContext.jsx';
 
-function NavBar({ myItem, onRouteChange }) {
+import './Nav.css'
+function NavBar({ myItem }) {
+    const {route,onRouteChange} = useContext(RouteContext);
     return (
         <nav className="my-nav">
             <ul>

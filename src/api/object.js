@@ -11,6 +11,13 @@ async function getObjectByID(id) {
 }
 
 
+async function getObjectsByCategory(id) {
+    const response = await fetchData("/object/category/" + id);
+    return response;
+}
+
+
 export {
-    getAllLostObjects
+    getAllLostObjects,
+    getObjectsByCategory
 }

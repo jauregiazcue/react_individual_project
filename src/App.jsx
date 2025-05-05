@@ -1,17 +1,6 @@
 import { useState } from 'react';
 
-//ASSETS
-import keyImage from './assets/key.jpg'
-import bagImage from './assets/bag.jpg'
-import bicicleImage from './assets/bicicle.jpg'
-import clothesImage from './assets/clothes.jpg'
-
-import creditCardImage from './assets/creditCard.jpg'
-import electronicsImage from './assets/electronics.jpg'
-import joyasImage from './assets/joyas.jpg'
-
-import otherImage from './assets/other.jpg'
-import telephoneImage from './assets/telephones.jpg'
+import RouteContext from "./content/routeContext.jsx"
 
 //COMPONENTS
 import Header from "./components/header/Header.jsx"
@@ -23,7 +12,7 @@ import './App.css'
 
 
 const routes = {
-  home: <Home/>,
+  home: <Home />,
   services: <h1>Trámites y Servicios</h1>,
   city:
     <>
@@ -32,29 +21,28 @@ const routes = {
   cityHall: <h1>Ayuntamiento</h1>,
   turism: <h1>Turismo</h1>,
   calendar: <h1>Agenda 2030</h1>,
-  lostAndFound: <LostAndFound myItem={[
-    { image: keyImage, text: "Llaves" }, { image: bicicleImage, text: "Bicicletas" },
-    { image: bagImage, text: "Bolsos/Carteras" }, { image: creditCardImage, text: "Documentacion\nTarjetas" },
-    { image: electronicsImage, text: "Electrónica" }, { image: joyasImage, text: "Joyas" },
-    { image: telephoneImage, text: "Telefonos" }, { image: clothesImage, text: "Ropa" },
-    { image: otherImage, text: "Otros" }]} />,
-  lostList: <LostList />
+  lostAndFound: <LostAndFound />,
+  lostList1: <LostList category_id={"1"} />,
+  lostList2: <LostList category_id={"2"} />,
+  lostList3: <LostList category_id={"3"} />
 }
 
 function App() {
-  const [route, setRoute] = useState("lostList");
+  const [route, setRoute] = useState("home");
 
   const handleRouteChange = (newRoute) => {
     setRoute(newRoute);
   }
   return (
     <>
-      <Header route={route} onRouteChange={handleRouteChange} />
-      {route != "city" ? routes[route] :
-        <>
-          {routes[route]}
-          <a onClick={() => handleRouteChange("lostAndFound")}>Objetos perdidos</a>
-        </>}
+      <RouteContext value={{ route: route, onRouteChange: handleRouteChange }}>
+        <Header route={route} />
+        {route != "city" ? routes[route] :
+          <>
+            {routes[route]}
+            <a onClick={() => handleRouteChange("lostAndFound")}>Objetos perdidos</a>
+          </>}
+      </RouteContext>
     </>
   )
 }

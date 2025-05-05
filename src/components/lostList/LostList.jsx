@@ -1,9 +1,11 @@
 import LostCard from '../lostCard/LostCard.jsx'
-import {getAllLostObjects} from "../../api/object.js"
+import {getObjectsByCategory} from "../../api/object.js"
 
 import { useState, useEffect } from 'react';
 
-function LostList(category_id) {
+import './LostList.css'
+
+function LostList({category_id}) {
     const [objects, setData] = useState([]);
 
     useEffect(() => {
@@ -11,11 +13,11 @@ function LostList(category_id) {
     }, []);
 
     const handleFetchData = async () => {
-        setData(await getAllLostObjects());
+        setData(await getObjectsByCategory(category_id));
     }
 
     return (
-        <section>
+        <section className="lost-list">
             {objects.map(object => {
                 return <LostCard key={object.object_id} object={object} />
             })}

@@ -24,10 +24,7 @@ body,
 }
 
 body {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+
 
   padding-top: 1%;
   background-color: var(--main-background-color);

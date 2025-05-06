@@ -1,9 +1,9 @@
 // router.jsx
-import { createBrowserRouter, NavLink } from 'react-router-dom';
-import Root from "../../Root.jsx"
+import { createBrowserRouter } from 'react-router-dom';
+import Root from "./Root.jsx"
 import Home from "../home/Home.jsx"
 import LostAndFound from '../lostAndFound/LostAndFound.jsx'
-import LostList from '../lostList/LostList.jsx';
+import LostList from '../../components/lostList/LostList.jsx';
 
 // Definimos nuestras rutas
 const router = createBrowserRouter([

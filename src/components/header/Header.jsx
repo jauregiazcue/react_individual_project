@@ -5,7 +5,7 @@ import './Header.css'
 
 function Header({ route }) {
     return (
-        <div>
+        <header>
             <section className="top-section">
                 <img src={zarautzLogo} className="logo" alt="Zarautz Logo" />
                 <section className="left-section">
@@ -23,7 +23,7 @@ function Header({ route }) {
                 { text: "Turismo", myClass: (route === "turism" ? "active" : ""), newRoute: "/es/turismo" },
                 { text: "Agenda 2030", myClass: (route === "calendar" ? "active" : ""), newRoute: "/es/agenda2030" }]}
             />
-        </div>
+        </header>
     );
 }
 

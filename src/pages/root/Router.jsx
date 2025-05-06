@@ -1,14 +1,13 @@
-// router.jsx
 import { createBrowserRouter } from 'react-router-dom';
 import Root from "./Root.jsx"
 import Home from "../home/Home.jsx"
 import LostAndFound from '../lostAndFound/LostAndFound.jsx'
 import LostList from '../../components/lostList/LostList.jsx';
+import LostListNav from '../../components/lostList/LostListNav.jsx';
 
-// Definimos nuestras rutas
 const router = createBrowserRouter([
     {
-        path: "/", 
+        path: "/",
         element: <Root />,
         children: [
             { path: "", element: <Home /> },
@@ -18,7 +17,12 @@ const router = createBrowserRouter([
             { path: "/es/agenda2030", element: <h1>Agenda 2030</h1> },
             { path: "/es/ciudad", element: <h1>Ciudad</h1> },
             { path: "/es/ciudad/objetosPerdidos", element: <LostAndFound /> },
-            { path: "/es/ciudad/objetosPerdidos/:id", element: <LostList /> },
+            {
+                path: "/es/ciudad/objetosPerdidos/op", element: <LostListNav />,
+                children: [
+                    { path: ":id", element: <LostList /> },
+                ]
+            },
         ],
     },
 ]);

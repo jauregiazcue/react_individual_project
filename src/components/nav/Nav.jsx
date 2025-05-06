@@ -3,13 +3,16 @@ import RouteContext from '../../content/routeContext.jsx';
 import { NavLink } from 'react-router-dom';
 
 import './Nav.css'
-function NavBar({ myItem }) {
+function NavBar({ myItem, vertical = false }) {
     const { route, onRouteChange } = useContext(RouteContext);
+    
     return (
-        <nav className="my-nav">
+        <nav className= {vertical ? "my-vertical-nav" : "my-nav"}>
             <ul>
                 {myItem.map(item => (
+                    
                     <li
+                        
                         key={item.text}
                     >
                         <NavLink
@@ -19,7 +22,7 @@ function NavBar({ myItem }) {
                                 return isActive ? 'link active' : 'link';
                             }}
                         >
-                            {item.text}
+                            <button>{item.text}</button>
                         </NavLink>
 
                     </li>

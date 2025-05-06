@@ -49,3 +49,45 @@
         display: none;
     }
 }
+
+.my-vertical-nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-vertical-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float:left;
+}
+
+.my-vertical-nav ul li {
+    padding: 0 0.2em;
+}
+
+.my-vertical-nav button {
+    width: 100%;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 3em;
+
+    color: var(--second-color);
+}
+
+.my-vertical-nav button:hover {
+    background-color: #314150;
+    color: var(--second-color);
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .my-vertical-nav {
+        display: none;
+    }
+}

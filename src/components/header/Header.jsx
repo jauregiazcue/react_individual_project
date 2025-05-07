@@ -6,6 +6,7 @@ import './Header.css'
 function Header({ route }) {
     return (
         <header>
+            
             <section className="top-section">
                 <img src={zarautzLogo} className="logo" alt="Zarautz Logo" />
                 <section className="left-section">

@@ -8,12 +8,12 @@ function Root() {
     <div>
       <Header />
 
-      <main>
+      <main className="main">
         
         <Outlet />
       </main>
 
-      <footer>© 2025 Mi App</footer>
+      <footer className="footer">© 2025 Mi App</footer>
     </div>
   );
 }

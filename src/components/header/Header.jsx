@@ -5,7 +5,7 @@ import './Header.css'
 
 function Header({ route }) {
     return (
-        <header>
+        <header className="header">
             
             <section className="top-section">
                 <img src={zarautzLogo} className="logo" alt="Zarautz Logo" />
@@ -16,7 +16,7 @@ function Header({ route }) {
                 </section>
             </section>
 
-            <Nav myItem={[
+            <Nav classNames="button" vertical={false} myItem={[
                 { text: "Inicio", myClass: (route === "home" ? "active" : ""), newRoute: "" },
                 { text: "Trámites y Servicios", myClass: (route === "services" ? "active" : ""), newRoute: "/es/servicio" },
                 { text: "Ciudad", myClass: (route === "city" ? "active" : ""), newRoute: "/es/ciudad" },

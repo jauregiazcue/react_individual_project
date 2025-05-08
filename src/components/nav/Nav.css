@@ -1,5 +1,4 @@
-
-.my-nav {
+.nav {
     margin-top: 10px;
     width: 100%;
     height: 5vh;
@@ -8,86 +7,71 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--second-color);
+
+    & ul {
+        display: flex;
+        flex-flow: row;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 10px;
+
+        & li {
+            padding: 0 0.2em;
+        }
+    }
 }
 
-.my-nav ul {
-    display: flex;
-    flex-flow: row;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-left: 10px;
-}
-
-.my-nav ul li {
-    padding: 0 0.2em;
-}
-
-.my-nav a {
+.nav__a {
     text-decoration: none;
     color: var(--main-color);
     padding-top: .5em;
     padding-bottom: 1em;
     padding-left: .5em;
     padding-right: .5em;
-}
 
-
-.my-nav a:hover {
-    background-color: var(--main-color);
-    color: var(--main-background-color);
-    border-style: solid;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-width: 1px;
-    border-color: var(--main-color);
-    text-decoration: none;
-}
-
-@media only screen and (max-width: 768px) {
-    .my-nav {
-        display: none;
+    &:hover {
+        background-color: var(--main-color);
+        color: var(--main-background-color);
+        border-style: solid;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-width: 1px;
+        border-color: var(--main-color);
+        text-decoration: none;
     }
 }
 
-.my-vertical-nav {
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+.nav--vertical {
     margin-top: 10px;
     width: 100%;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-}
 
-.my-vertical-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    float:left;
-}
+    & ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+    
+        & li {
+            padding: 0 0.2em;
+        }
+    }
 
-.my-vertical-nav ul li {
-    padding: 0 0.2em;
-}
-
-.my-vertical-nav button {
-    width: 100%;
-    text-align: left;
-    padding-left: 1em;
-    padding-right: 1em;
-    height: 3em;
-
-    color: var(--second-color);
-}
-
-.my-vertical-nav button:hover {
-    background-color: #314150;
-    color: var(--second-color);
-    text-decoration: none;
+    
 }
 
 @media only screen and (max-width: 768px) {
-    .my-vertical-nav {
+    .nav, .nav--vertical {
         display: none;
     }
+
 }

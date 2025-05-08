@@ -1,13 +1,10 @@
-import { useContext } from 'react';
-import RouteContext from '../../content/routeContext.jsx';
 import { NavLink } from 'react-router-dom';
+import Button from '../button/Button.jsx';
 
 import './Nav.css'
-function NavBar({ myItem, vertical = false }) {
-    const { route, onRouteChange } = useContext(RouteContext);
-    
+function NavBar({ classNames= "button",myItem, vertical = false }) {
     return (
-        <nav className= {vertical ? "my-vertical-nav" : "my-nav"}>
+        <nav className= {vertical ? "nav--vertical" : "nav"}>
             <ul>
                 {myItem.map(item => (
                     
@@ -15,14 +12,15 @@ function NavBar({ myItem, vertical = false }) {
                         
                         key={item.text}
                     >
-                        <NavLink
+                        <NavLink 
                             to={item.newRoute}
                             className={({ isActive }) => {
-                                // isActive será true cuando estemos en esta ruta
-                                return isActive ? 'link active' : 'link';
+                                let classNames = isActive ? 'link active' : 'link';
+                                classNames += vertical ? "" : " nav__a";
+                                return classNames;
                             }}
                         >
-                            <button>{item.text}</button>
+                            <Button classNames={classNames}>{item.text}</Button>
                         </NavLink>
 
                     </li>

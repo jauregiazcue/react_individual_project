@@ -2,32 +2,36 @@
   --main-background-color: #eeeeee;
   --main-color: #3a4d5f;
 
-  --second-color: white;
+  --second-color: rgba(255, 255, 255, 0.87);
   --footer-color: rgb(13, 13, 20);
+
+  --hover-color:#314150;
 
   --main-height: 80vh;
 }
 
 html,
 body,
-#root,
-.App {
+#root {
   height: 100%;
   overflow: auto;
 }
 
-button {
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-  
+body {
+  margin: 0;
+  padding-top: 1%;
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
+  color: var(--second-color);
   background-color: var(--main-color);
   width: 90%;
   margin: auto auto;
@@ -36,32 +40,21 @@ button {
   border-top-left-radius: 5px;
 }
 
-body {
-  padding-top: 1%;
-  background-color: var(--main-background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-main {
-  min-height: var(--main-height);
-}
-
-header {
+.header {
   min-height: 20vh;
 }
 
-footer {
+.main {
+  min-height: var(--main-height);
+}
+
+.footer {
 
   min-height: 10vh;
   background-color: var(--footer-color);
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  display: none;
-}
+
 
 @media only screen and (max-width: 768px) {
 

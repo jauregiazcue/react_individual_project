@@ -31,7 +31,7 @@ function LostList() {
     return (
         <div className="lost-section">
             <section className='lost-left-section'>
-                <Nav vertical={true} myItem={setObjCorrectly(objCat)} />
+                <Nav classNames="button nav__button--vertical"vertical={true} myItem={setObjCorrectly(objCat)} />
             </section>
             <Outlet />
         </div>

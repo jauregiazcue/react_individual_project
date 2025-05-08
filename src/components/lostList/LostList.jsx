@@ -24,11 +24,11 @@ function LostList() {
     }
 
     return (
-        <>
+        <section className="lost-right-section">
             {objects.map(object => {
                     return <LostCard key={object.object_id} object={object} />
                 })}
-        </>
+        </section>
     )
 }
 

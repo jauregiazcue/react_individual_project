@@ -1,7 +1,6 @@
 
 .lost-section {
     display: flex;
-    flex-wrap: wrap;
     min-height: var(--main-height);
 }
 
@@ -9,11 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 5%;
     min-height: var(--main-height);
+    width: 80%;
 }
 
 .lost-left-section {
     border-right: 2px solid var(--second-color);
+    border-top: 2px solid var(--second-color);
     min-height: var(--main-height);
+    width: 20%;
 }

@@ -9,7 +9,6 @@ function NavBar({ classNames= "button",myItem, vertical = false }) {
                 {myItem.map(item => (
                     
                     <li
-                        
                         key={item.text}
                     >
                         <NavLink 

@@ -1,4 +1,5 @@
-import Nav from "../nav/Nav.jsx"
+
+import VerticalNav from "../../components/verticalNav/VerticalNav.jsx";
 
 import { getAll } from '../../api/objectCat.js';
 
@@ -28,13 +29,11 @@ function LostList() {
     const handleFetchData = async () => {
         setObjCatData(await getAll());
     }
+
     return (
-        <div className="lost-section">
-            <section className='lost-left-section'>
-                <Nav classNames="button nav__button--vertical"vertical={true} myItem={setObjCorrectly(objCat)} />
-            </section>
-            <Outlet />
-        </div>
+        <VerticalNav  myItem={setObjCorrectly(objCat)}>
+            <Outlet/>
+        </VerticalNav>
     )
 }
 

@@ -1,0 +1,19 @@
+.home__article {
+  min-height: var(--main-height);
+  width: 80%;
+
+  & p {
+    padding: 0;
+  }
+
+  
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .home__article {
+    width: 100%;
+  }
+
+}

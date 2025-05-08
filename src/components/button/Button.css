@@ -20,6 +20,8 @@
 	&:hover {
 			background-color: var(--hover-color);
 			color: var(--second-color);
+			border: 2px solid var(--second-color);
+			border-radius: 5em;
 			text-decoration: none;
 	}
 }

@@ -1,4 +1,4 @@
-import LostCard from '../lostCard/LostCard.jsx'
+import LostCard from '../../components/lostCard/LostCard.jsx'
 import { getObjectsByCategory } from "../../api/object.js"
 
 import { useState, useEffect } from 'react';
@@ -21,11 +21,11 @@ function LostList() {
     }
 
     return (
-        <section className="lost-right-section">
+        <>
             {objects.map(object => {
                     return <LostCard key={object.object_id} object={object} />
                 })}
-        </section>
+        </>
     )
 }
 

@@ -2,8 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Root from "./Root.jsx"
 import Home from "../home/Home.jsx"
 import LostAndFound from '../lostAndFound/LostAndFound.jsx'
-import LostList from '../../components/lostList/LostList.jsx';
-import LostListNav from '../../components/lostList/LostListNav.jsx';
+import LostList from "../lostList/LostList.jsx"
+import LostListNav from '../lostList/LostListNav.jsx';
 import City from '../city/City.jsx';
 
 const router = createBrowserRouter([

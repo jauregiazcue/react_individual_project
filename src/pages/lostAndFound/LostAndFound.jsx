@@ -17,6 +17,7 @@ import telephoneImage from '../../assets/telephones.jpg'
 import { NavLink } from 'react-router-dom';
 
 import { getAll } from '../../api/objectCat.js';
+import Button from "../../components/button/Button.jsx"
 
 import './LostAndFound.css'
 
@@ -40,18 +41,33 @@ function LostAndFound() {
     }
 
     console.log(objCat);
+
+    const myStyle = {
+        backgroundImage:
+            "url('https://media.geeksforgeeks.org/wp-content/uploads/rk.png')",
+    };
     return (
-        <div className="my-section">
+        <div className="lostCategoryBlock">
             {objCat && objCat.map(object => (
-                <div key={object.object_category_id} >
-                    <NavLink className="my-navlink-section"
-                        to={"/es/ciudad/objetosPerdidos/" + object.object_category_id}
+                <div className="lostCategoryBlock__div" key={object.object_category_id} >
+                    <NavLink className="lostCategoryBlock_link"
+                        to={"/es/ciudad/objetosPerdidos/op/" + object.object_category_id}
                     >
-                        <img src={img[object.object_category_id - 1]}
-                            className="logo" alt={"Alt: " + object.name} />
-                        <p>{object.name}</p>
+                        <div className='lostCategoryBlock__container'>
+                            <Button classNames="button lostCategoryBlock__button" 
+                            styles={{backgroundImage: `url(${img[object.object_category_id - 1]})`,
+                            backgroundRepeat: `no-repeat`,
+                            backgroundSize: `cover`,
+                            backgroundPosition: `center`}
+                            }>
+                              
+                            </Button>
+                            <p className='lostCategoryBlock__p'>{object.name}</p>
+
+                        </div>
+
                     </NavLink>
-                    
+
 
 
                 </div>

@@ -1,5 +1,9 @@
-.lost-card {
+.lostCardBlock {
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 1em;
+
+    & img {
+        height: 6em;
+    }
 }

@@ -1,11 +1,8 @@
 import LostCard from '../lostCard/LostCard.jsx'
 import { getObjectsByCategory } from "../../api/object.js"
-import  Nav  from "../nav/Nav.jsx"
-
-import { getAll } from '../../api/objectCat.js';
 
 import { useState, useEffect } from 'react';
-import { Outlet, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import './LostList.css'
 

@@ -7,9 +7,9 @@ function Header({ route }) {
     return (
         <header className="header">
             
-            <section className="top-section">
-                <img src={zarautzLogo} className="logo" alt="Zarautz Logo" />
-                <section className="left-section">
+            <section className="header__section--top">
+                <img src={zarautzLogo} className="header__img" alt="Zarautz Logo" />
+                <section className="header__section--right">
                     <a>es</a>
                     <a>eu</a>
                     <SearchFilter />

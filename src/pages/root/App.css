@@ -49,9 +49,13 @@ body::-webkit-scrollbar {
 }
 
 .footer {
-
+  padding-top: 2em;
   min-height: 10vh;
   background-color: var(--footer-color);
+
+  & p {
+    margin: 0;
+  }
 }
 
 

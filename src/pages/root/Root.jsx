@@ -1,6 +1,7 @@
 // pages/Root.jsx
 
 import Header from "../../components/header/Header.jsx"
+import Footer from "../../components/footer/Footer.jsx";
 import { Outlet } from 'react-router-dom';
 import './App.css'
 function Root() {
@@ -13,7 +14,7 @@ function Root() {
         <Outlet />
       </main>
 
-      <footer className="footer">© 2025 Mi App</footer>
+      <Footer >© 2025 Mi App</Footer>
     </div>
   );
 }

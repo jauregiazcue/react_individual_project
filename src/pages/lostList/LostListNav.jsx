@@ -20,18 +20,17 @@ function setObjCorrectly(objs) {
 
 function LostList() {
     const [objCat, setObjCatData] = useState([]);
-
     useEffect(() => {
         handleFetchData();
     }, []);
 
 
     const handleFetchData = async () => {
-        setObjCatData(await getAll());
+        setObjCatData(setObjCorrectly(await getAll()));
     }
 
     return (
-        <VerticalNav  myItem={setObjCorrectly(objCat)}>
+        <VerticalNav  articleClassName="page__article--lostList" myItem={objCat}>
             <Outlet/>
         </VerticalNav>
     )

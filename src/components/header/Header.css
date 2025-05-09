@@ -20,3 +20,21 @@
         margin-right: .5em;
     }
 }
+
+@media only screen and (max-width: 768px) {
+
+    .header__section--top {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .header__section--right {
+        padding-top: 1em;
+        display: flex;
+        margin-top: auto;
+        justify-content: space-around;
+        align-self: center;
+        
+    }
+}

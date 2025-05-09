@@ -8,7 +8,24 @@
   flex-wrap: wrap;
   justify-content: center;
   min-height: var(--main-height);
+  margin: auto auto;
   width: 80%;
+  padding-bottom: 2em;
+}
+
+.page__article--lostList {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: var(--main-height);
+  width: 80%;
+  & h1 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    margin: auto auto;
+  }
 }
 
 .page__nav--left {
@@ -31,7 +48,7 @@
       display: none;
   }
 
-  .page__article{
+  .page__article, .page__article--lostList {
       width: 100%;
   }
 
